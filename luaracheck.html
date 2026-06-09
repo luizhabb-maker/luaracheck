@@ -248,7 +248,9 @@
   }
   .cat-card:hover { transform: translateY(-3px); box-shadow: 0 6px 24px rgba(244,114,182,.2); }
   .cat-card.active-cat { border-color: var(--pink-dark); }
-  .cat-icon { font-size: 36px; margin-bottom: 8px; }
+  .cat-icon { font-size: 36px; margin-bottom: 8px; display:flex; align-items:center; justify-content:center; height:52px; }
+  .cat-icon img { filter: drop-shadow(0 4px 8px rgba(0,0,0,.12)); transition: transform .2s; }
+  .cat-card:hover .cat-icon img { transform: scale(1.1) rotate(-4deg); }
   .cat-name { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
   .cat-count { font-size: 11px; color: var(--text-muted); }
   .cat-bar { background: var(--pink-mid); border-radius: 99px; height: 4px; margin-top: 8px; }
@@ -634,7 +636,7 @@
 <!-- ===== SIDEBAR ===== -->
 <aside class="sidebar">
   <div class="sidebar-logo">
-    <div style="font-size:40px">🦊</div>
+    <img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Fox/3D/fox_3d.png" style="width:48px;height:48px">
     <div class="sidebar-logo-text">
       <strong>LuaraCheck</strong>
       <span id="sb-subtitle">Enxoval da Luara</span>
@@ -643,32 +645,38 @@
 
   <nav class="sidebar-nav">
     <div class="nav-item active" data-view="dashboard">
-      <span class="nav-icon">🏠</span> Dashboard
+      <span class="nav-icon"><img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/House/3D/house_3d.png" style="width:20px;height:20px"></span> Dashboard
     </div>
     <div class="nav-item" data-view="categorias">
-      <span class="nav-icon">📂</span> Categorias
+      <span class="nav-icon"><img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Open%20file%20folder/3D/open_file_folder_3d.png" style="width:20px;height:20px"></span> Categorias
     </div>
     <div class="nav-item" data-view="itens">
-      <span class="nav-icon">✅</span> Itens
+      <span class="nav-icon"><img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Check%20mark%20button/3D/check_mark_button_3d.png" style="width:20px;height:20px"></span> Itens
     </div>
     <div class="nav-item" data-view="compras">
-      <span class="nav-icon">🛒</span> Lista de Compras
+      <span class="nav-icon"><img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Shopping%20cart/3D/shopping_cart_3d.png" style="width:20px;height:20px"></span> Lista de Compras
     </div>
     <div class="nav-item" data-view="financeiro">
-      <span class="nav-icon">💰</span> Financeiro
+      <span class="nav-icon"><img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Money%20bag/3D/money_bag_3d.png" style="width:20px;height:20px"></span> Financeiro
     </div>
     <div class="nav-item" data-view="timeline">
-      <span class="nav-icon">📅</span> Linha do Tempo
+      <span class="nav-icon"><img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Calendar/3D/calendar_3d.png" style="width:20px;height:20px"></span> Linha do Tempo
     </div>
     <div class="nav-item" data-view="compartilhamento">
-      <span class="nav-icon">🔗</span> Compartilhamento
+      <span class="nav-icon"><img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Link/3D/link_3d.png" style="width:20px;height:20px"></span> Compartilhamento
     </div>
     <div class="nav-item" data-view="configuracoes">
-      <span class="nav-icon">⚙️</span> Configurações
+      <span class="nav-icon"><img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Gear/3D/gear_3d.png" style="width:20px;height:20px"></span> Configurações
     </div>
   </nav>
 
   <div class="sidebar-bottom">
+    <!-- Fox family illustration -->
+    <div style="display:flex;align-items:flex-end;justify-content:center;gap:4px;padding:8px 0 4px">
+      <img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Fox/3D/fox_3d.png" style="width:52px;height:52px">
+      <img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Fox/3D/fox_3d.png" style="width:36px;height:36px;margin-bottom:4px">
+      <img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Fox/3D/fox_3d.png" style="width:50px;height:50px">
+    </div>
     <div class="countdown-card">
       <div class="countdown-date">Chegada da Luara</div>
       <div class="date-val" id="sb-arrival-date">09/08/2026</div>
@@ -696,7 +704,7 @@
         🔔<span class="notif-badge" id="notif-count">0</span>
       </button>
       <div class="user-chip">
-        <div class="user-avatar">👩</div>
+        <div class="user-avatar"><img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Fox/3D/fox_3d.png" style="width:22px;height:22px"></div>
         <span id="user-names">Luiz & Jessica</span>
       </div>
     </div>
@@ -726,16 +734,16 @@
             <div class="progress-pct" id="d-pct">0%</div>
             <div class="progress-msg" id="d-msg">Vamos começar! 🦊💕</div>
           </div>
-          <div class="progress-fox">🦊</div>
+          <div class="progress-fox"><img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Fox/3D/fox_3d.png" style="width:140px;height:140px;filter:drop-shadow(0 8px 16px rgba(244,114,182,.25))"></div>
         </div>
 
         <!-- Cofrinho -->
         <div class="cofrinho-card">
           <div class="cofrinho-header">
-            <span>🦊</span>
+            <img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Fox/3D/fox_3d.png" style="width:28px;height:28px">
             <h3>Cofrinho da Raposinha</h3>
           </div>
-          <div class="cofrinho-pig">🦊</div>
+          <div class="cofrinho-pig"><img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Fox/3D/fox_3d.png" style="width:64px;height:64px;filter:drop-shadow(0 4px 8px rgba(244,114,182,.2))"></div>
           <div class="cofrinho-row">
             <div class="cofrinho-label">Valor previsto</div>
             <div class="cofrinho-val pink" id="c-planned">R$ 0,00</div>
@@ -788,7 +796,7 @@
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
             <div class="section-title" style="margin-bottom:0">Próximos passos</div>
           </div>
-          <div style="text-align:center;font-size:56px;margin-bottom:10px">🦊</div>
+          <div style="text-align:center;margin-bottom:10px"><img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Fox/3D/fox_3d.png" style="width:72px;height:72px;filter:drop-shadow(0 4px 10px rgba(244,114,182,.25))"></div>
           <ul class="next-steps-list" id="d-next-steps"></ul>
           <div style="margin-top:12px">
             <button class="link-btn" onclick="switchView('compras')">Ver lista de compras →</button>
@@ -944,7 +952,7 @@
   </div><!-- /content -->
 
   <footer class="main-footer">
-    LuaraCheck 🦊 Feito com amor por Luiz & Jessica para nossa Luara 💕
+    LuaraCheck <img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Fox/3D/fox_3d.png" style="width:16px;height:16px;vertical-align:middle"> Feito com amor por Luiz & Jessica para nossa Luara 💕
   </footer>
 </div><!-- /main -->
 
@@ -1086,6 +1094,32 @@ import {
   getFirestore, collection, doc, addDoc, setDoc, getDocs,
   deleteDoc, onSnapshot, query, orderBy, serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+// ─── Fluent Emoji 3D icons ───
+const FX = 'https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets';
+const FLUENT = {
+  '👗': `${FX}/T-shirt/3D/t-shirt_3d.png`,
+  '🛁': `${FX}/Bathtub/3D/bathtub_3d.png`,
+  '🛏️': `${FX}/Bed/3D/bed_3d.png`,
+  '🚗': `${FX}/Automobile/3D/automobile_3d.png`,
+  '🍼': `${FX}/Baby%20bottle/3D/baby_bottle_3d.png`,
+  '🤱': `${FX}/Breast-feeding/3D/breast-feeding_3d.png`,
+  '🩺': `${FX}/Stethoscope/3D/stethoscope_3d.png`,
+  '📦': `${FX}/Package/3D/package_3d.png`,
+  '🦊': `${FX}/Fox/3D/fox_3d.png`,
+  '🏠': `${FX}/House/3D/house_3d.png`,
+  '📂': `${FX}/Open%20file%20folder/3D/open_file_folder_3d.png`,
+  '✅': `${FX}/Check%20mark%20button/3D/check_mark_button_3d.png`,
+  '🛒': `${FX}/Shopping%20cart/3D/shopping_cart_3d.png`,
+  '💰': `${FX}/Money%20bag/3D/money_bag_3d.png`,
+  '📅': `${FX}/Calendar/3D/calendar_3d.png`,
+  '🔗': `${FX}/Link/3D/link_3d.png`,
+  '⚙️': `${FX}/Gear/3D/gear_3d.png`,
+};
+function fi(emoji, size=40) {
+  const src = FLUENT[emoji] || FLUENT['📦'];
+  return `<img src="${src}" style="width:${size}px;height:${size}px;object-fit:contain" loading="lazy">`;
+}
 
 // ─── State ───
 let db = null;
@@ -1333,7 +1367,7 @@ function renderDashboard() {
     const catTotal = catItems.length;
     const catPct = catTotal > 0 ? Math.round(catDone / catTotal * 100) : 0;
     return `<div class="cat-card" onclick="switchView('itens');setTimeout(()=>{document.getElementById('items-filter-cat').value='${cat.id}';renderItems();},50)">
-      <div class="cat-icon">${cat.icon || '📦'}</div>
+      <div class="cat-icon">${fi(cat.icon || '📦', 44)}</div>
       <div class="cat-name">${cat.name}</div>
       <div class="cat-count">${catDone}/${catTotal} itens</div>
       <div class="cat-bar"><div class="cat-bar-fill" style="width:${catPct}%"></div></div>
@@ -1352,7 +1386,7 @@ function renderDashboard() {
       return `<tr>
         <td><div class="item-check ${isChecked ? 'checked' : ''}" onclick="toggleItem('${item.id}')">${isChecked ? '✓' : ''}</div></td>
         <td><div class="item-cell-name">
-          <div class="item-thumb">${cat.icon || '📦'}</div>
+          <div class="item-thumb">${fi(cat.icon || '📦', 20)}</div>
           <span style="${isChecked ? 'text-decoration:line-through;opacity:.6' : ''}">${item.name}</span>
         </div></td>
         <td><span class="badge ${getCatBadgeColor(idx)}">${cat.name}</span></td>
@@ -1394,7 +1428,7 @@ function renderCats() {
     return `<div class="card" style="cursor:pointer" onclick="switchView('itens');setTimeout(()=>{document.getElementById('items-filter-cat').value='${cat.id}';renderItems();},50)">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
         <div style="display:flex;align-items:center;gap:8px">
-          <span style="font-size:28px">${cat.icon || '📦'}</span>
+          ${fi(cat.icon || '📦', 36)}
           <strong style="font-size:15px">${cat.name}</strong>
         </div>
         <div style="display:flex;gap:6px">
