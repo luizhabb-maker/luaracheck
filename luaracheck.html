@@ -562,7 +562,8 @@
 
     /* Progress card compacto */
     .progress-card { padding: 16px; flex-direction: column; gap: 10px; }
-    .progress-fox { display: none; }
+    .progress-fox { display: flex; justify-content: center; }
+    .progress-fox img { width: 110px !important; height: 110px !important; }
     .progress-numbers { font-size: 32px; line-height: 1; }
     .progress-numbers span { font-size: 20px; }
     .progress-card-info h2 { font-size: 13px; }
@@ -672,10 +673,10 @@
 
   <div class="sidebar-bottom">
     <!-- Fox family illustration -->
-    <div style="display:flex;align-items:flex-end;justify-content:center;gap:4px;padding:8px 0 4px">
-      <img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Fox/3D/fox_3d.png" style="width:52px;height:52px">
-      <img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Fox/3D/fox_3d.png" style="width:36px;height:36px;margin-bottom:4px">
-      <img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Fox/3D/fox_3d.png" style="width:50px;height:50px">
+    <div style="text-align:center;padding:8px 0 4px">
+      <img src="https://stories.freepiklabs.com/storage/62715/Fox-family-(1)-01.svg"
+           style="width:180px;height:auto;max-height:140px;object-fit:contain"
+           alt="Família de raposinhas">
     </div>
     <div class="countdown-card">
       <div class="countdown-date">Chegada da Luara</div>
@@ -734,7 +735,11 @@
             <div class="progress-pct" id="d-pct">0%</div>
             <div class="progress-msg" id="d-msg">Vamos começar! 🦊💕</div>
           </div>
-          <div class="progress-fox"><img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Fox/3D/fox_3d.png" style="width:140px;height:140px;filter:drop-shadow(0 8px 16px rgba(244,114,182,.25))"></div>
+          <div class="progress-fox">
+            <img src="https://stories.freepiklabs.com/storage/69851/Fox-family_Mesa-de-trabajo-1.svg"
+                 style="width:180px;height:180px;object-fit:contain;filter:drop-shadow(0 8px 20px rgba(244,114,182,.2))"
+                 alt="Raposinha">
+          </div>
         </div>
 
         <!-- Cofrinho -->
@@ -743,7 +748,11 @@
             <img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Fox/3D/fox_3d.png" style="width:28px;height:28px">
             <h3>Cofrinho da Raposinha</h3>
           </div>
-          <div class="cofrinho-pig"><img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Fox/3D/fox_3d.png" style="width:64px;height:64px;filter:drop-shadow(0 4px 8px rgba(244,114,182,.2))"></div>
+          <div class="cofrinho-pig">
+            <img src="https://stories.freepiklabs.com/storage/68771/Animals-floating-with-balloons-01.svg"
+                 style="width:110px;height:90px;object-fit:contain"
+                 alt="Raposinha balão">
+          </div>
           <div class="cofrinho-row">
             <div class="cofrinho-label">Valor previsto</div>
             <div class="cofrinho-val pink" id="c-planned">R$ 0,00</div>
@@ -796,7 +805,11 @@
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
             <div class="section-title" style="margin-bottom:0">Próximos passos</div>
           </div>
-          <div style="text-align:center;margin-bottom:10px"><img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Fox/3D/fox_3d.png" style="width:72px;height:72px;filter:drop-shadow(0 4px 10px rgba(244,114,182,.25))"></div>
+          <div style="text-align:center;margin-bottom:10px">
+            <img src="https://stories.freepiklabs.com/storage/62441/Fox-Family_Mesa-de-trabajo-1.svg"
+                 style="width:110px;height:110px;object-fit:contain"
+                 alt="Raposinha com lista">
+          </div>
           <ul class="next-steps-list" id="d-next-steps"></ul>
           <div style="margin-top:12px">
             <button class="link-btn" onclick="switchView('compras')">Ver lista de compras →</button>
