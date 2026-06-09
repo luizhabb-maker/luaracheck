@@ -520,70 +520,99 @@
   }
 
   @media (max-width: 640px) {
-    /* Sidebar vira drawer */
+    /* ── Sidebar drawer ── */
     .sidebar {
       transform: translateX(-100%);
       transition: transform .25s ease;
-      z-index: 101;
-      width: 260px;
+      z-index: 101; width: 260px;
     }
     .sidebar.open { transform: translateX(0); }
     .sidebar-overlay.open { display: block; }
-
-    /* Main ocupa tudo */
     .main { margin-left: 0; }
 
-    /* Topbar */
-    .topbar { padding: 12px 16px; gap: 8px; }
-    .topbar-title h1 { font-size: 16px; }
+    /* ── Topbar ── */
+    .topbar { padding: 10px 14px; gap: 8px; }
+    .topbar-title h1 { font-size: 15px; }
     .topbar-title p { display: none; }
     .hamburger { display: flex; }
+    .user-chip span { display: none; }
+    .notif-badge { font-size: 9px; }
 
-    /* Content */
-    .content { padding: 16px; }
+    /* ── Content ── */
+    .content { padding: 12px; }
 
-    /* Dashboard: tudo 1 coluna */
-    .dashboard-grid,
-    .bottom-grid { grid-template-columns: 1fr; gap: 14px; }
+    /* ── Dashboard ── */
+    .dashboard-grid { grid-template-columns: 1fr; gap: 12px; }
+    .bottom-grid { grid-template-columns: 1fr; gap: 12px; }
 
-    /* Progress numbers menores */
-    .progress-numbers { font-size: 36px; }
+    /* Progress card compacto */
+    .progress-card { padding: 16px; flex-direction: column; gap: 10px; }
     .progress-fox { display: none; }
+    .progress-numbers { font-size: 32px; line-height: 1; }
+    .progress-numbers span { font-size: 20px; }
+    .progress-card-info h2 { font-size: 13px; }
+    .progress-pct { font-size: 12px; }
+    .progress-msg { font-size: 11px; }
 
-    /* Categories scroll */
-    .cat-card { min-width: 110px; padding: 12px; }
-    .cat-icon { font-size: 28px; }
+    /* Cofrinho compacto */
+    .cofrinho-card { padding: 14px; }
+    .cofrinho-pig { font-size: 36px; margin-bottom: 6px; }
+    .cofrinho-val { font-size: 17px; }
+    .cofrinho-row { margin-bottom: 7px; }
 
-    /* Finance */
+    /* Categorias */
+    .section-title { font-size: 14px; margin-bottom: 10px; }
+    .cat-card { min-width: 100px; padding: 10px 8px; }
+    .cat-icon { font-size: 26px; margin-bottom: 6px; }
+    .cat-name { font-size: 12px; }
+    .cat-count { font-size: 10px; }
+
+    /* Tabela "Itens recentes" — esconder colunas pesadas */
+    .items-table { font-size: 12px; width: 100%; }
+    .items-table th, .items-table td { padding: 8px 4px; }
+    /* Esconder: Categoria (3ª col), Qtd (4ª), Data (6ª) */
+    .items-table th:nth-child(3),
+    .items-table td:nth-child(3),
+    .items-table th:nth-child(4),
+    .items-table td:nth-child(4),
+    .items-table th:nth-child(6),
+    .items-table td:nth-child(6) { display: none; }
+    /* Item name não corta */
+    .item-cell-name { gap: 6px; }
+    .item-thumb { width: 26px; height: 26px; font-size: 13px; flex-shrink: 0; }
+    .item-cell-name span { font-size: 12px; word-break: break-word; }
+
+    /* Card overflow para tabela */
+    .card { overflow: hidden; }
+
+    /* Próximos passos */
+    .next-steps-list li { padding: 8px 0; }
+    .step-text strong { font-size: 12px; }
+
+    /* ── Finance ── */
     .finance-grid { grid-template-columns: 1fr; }
+    .stat-card .stat-val { font-size: 20px; }
 
-    /* Items grid: 1 coluna */
+    /* ── Items grid ── */
     .items-grid { grid-template-columns: 1fr; }
 
-    /* Toolbar wrap */
-    .toolbar { gap: 8px; }
-    .search-box { min-width: 0; }
+    /* ── Toolbar ── */
+    .toolbar { gap: 8px; flex-wrap: wrap; }
+    .search-box { min-width: 0; flex: 1; }
+    .filter-select { flex: 1; min-width: 0; }
 
-    /* Modal full width */
-    .modal { width: 95vw; padding: 20px 16px; }
+    /* ── Modal ── */
+    .modal { width: 96vw; padding: 18px 14px; }
     .form-row { grid-template-columns: 1fr; }
 
-    /* Share grid */
+    /* ── Share ── */
     .share-grid { grid-template-columns: 1fr; }
 
-    /* Table scroll */
-    .card { overflow-x: auto; }
-    .items-table { font-size: 12px; }
-    .items-table th, .items-table td { padding: 8px 6px; }
+    /* ── Lista de compras ── */
+    .shop-name { font-size: 13px; }
 
-    /* Bottom nav */
-    .main-footer { font-size: 11px; }
-
-    /* Cofrinho */
-    .cofrinho-pig { font-size: 40px; }
-
-    /* Stat cards */
-    .stat-card .stat-val { font-size: 20px; }
+    /* ── Footer ── */
+    .main-footer { font-size: 11px; padding: 12px; }
   }
 </style>
 </head>
