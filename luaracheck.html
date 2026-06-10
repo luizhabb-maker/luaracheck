@@ -717,17 +717,8 @@
 
 <!-- ===== MOBILE TOP HEADER ===== -->
 <header class="mobile-top-header" id="mobile-top-header">
-  <div style="display:flex;align-items:center;gap:8px">
-    <img src="/logo.png" style="height:36px;width:auto;object-fit:contain">
-    <div>
-      <div style="font-size:15px;font-weight:800;color:var(--pink-dark);line-height:1.1">LuaraCheck</div>
-      <div id="mh-subtitle" style="font-size:10px;color:var(--text-muted);line-height:1">Enxoval da Luara</div>
-    </div>
-  </div>
-  <div style="position:relative;cursor:pointer" onclick="toggleSidebar()">
-    <span style="font-size:22px;line-height:1">🔔</span>
-    <span id="notif-badge-m" style="position:absolute;top:-4px;right:-4px;background:var(--orange);color:#fff;font-size:9px;font-weight:800;border-radius:999px;padding:1px 4px;min-width:14px;text-align:center">0</span>
-  </div>
+  <img src="/logo.png" style="height:36px;width:auto;object-fit:contain">
+  <button onclick="toggleSidebar()" style="background:none;border:none;font-size:26px;cursor:pointer;color:var(--text-sm);padding:4px 6px;line-height:1">☰</button>
 </header>
 
 <!-- ===== SIDEBAR ===== -->
@@ -1108,7 +1099,10 @@
 <!-- ===== MODAL: ITEM ===== -->
 <div class="modal-overlay" id="modal-item">
   <div class="modal">
-    <div class="modal-title" id="modal-item-title">Novo Item</div>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+      <div class="modal-title" id="modal-item-title" style="margin-bottom:0">Novo Item</div>
+      <button onclick="closeModal('modal-item')" style="background:none;border:none;font-size:22px;cursor:pointer;color:var(--text-muted);line-height:1;padding:2px 4px">✕</button>
+    </div>
     <input type="hidden" id="item-edit-id">
     <div class="form-group">
       <label class="form-label">Nome do item *</label>
@@ -1161,7 +1155,10 @@
 <!-- ===== MODAL: CATEGORIA ===== -->
 <div class="modal-overlay" id="modal-cat">
   <div class="modal">
-    <div class="modal-title">Nova Categoria</div>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+      <div class="modal-title" id="modal-cat-title" style="margin-bottom:0">Nova Categoria</div>
+      <button onclick="closeModal('modal-cat')" style="background:none;border:none;font-size:22px;cursor:pointer;color:var(--text-muted);line-height:1;padding:2px 4px">✕</button>
+    </div>
     <input type="hidden" id="cat-edit-id">
     <div class="form-group">
       <label class="form-label">Nome *</label>
