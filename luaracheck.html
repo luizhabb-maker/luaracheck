@@ -636,12 +636,9 @@
 
 <!-- ===== SIDEBAR ===== -->
 <aside class="sidebar">
-  <div class="sidebar-logo">
-    <img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Fox/3D/fox_3d.png" style="width:48px;height:48px">
-    <div class="sidebar-logo-text">
-      <strong>LuaraCheck</strong>
-      <span id="sb-subtitle">Enxoval da Luara</span>
-    </div>
+  <div class="sidebar-logo" style="flex-direction:column;align-items:flex-start;gap:4px">
+    <img src="/logo.png" style="height:48px;width:auto;object-fit:contain">
+    <span id="sb-subtitle" style="font-size:11px;color:var(--text-muted);padding-left:2px">Enxoval da Luara</span>
   </div>
 
   <nav class="sidebar-nav">
@@ -674,9 +671,9 @@
   <div class="sidebar-bottom">
     <!-- Fox family illustration -->
     <div style="text-align:center;padding:8px 0 4px">
-      <img src="https://stories.freepiklabs.com/storage/62715/Fox-family-(1)-01.svg"
+      <img src="/fox-in-a-burrow.png"
            style="width:180px;height:auto;max-height:140px;object-fit:contain"
-           alt="Família de raposinhas">
+           alt="Raposa na toca">
     </div>
     <div class="countdown-card">
       <div class="countdown-date">Chegada da Luara</div>
@@ -705,7 +702,7 @@
         🔔<span class="notif-badge" id="notif-count">0</span>
       </button>
       <div class="user-chip">
-        <div class="user-avatar"><img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Fox/3D/fox_3d.png" style="width:22px;height:22px"></div>
+        <div class="user-avatar"><img src="/fox-head.png.png" style="width:22px;height:22px;object-fit:contain"></div>
         <span id="user-names">Luiz & Jessica</span>
       </div>
     </div>
@@ -736,22 +733,22 @@
             <div class="progress-msg" id="d-msg">Vamos começar! 🦊💕</div>
           </div>
           <div class="progress-fox">
-            <img src="https://stories.freepiklabs.com/storage/69851/Fox-family_Mesa-de-trabajo-1.svg"
+            <img src="/fox-family.png"
                  style="width:180px;height:180px;object-fit:contain;filter:drop-shadow(0 8px 20px rgba(244,114,182,.2))"
-                 alt="Raposinha">
+                 alt="Família raposinha">
           </div>
         </div>
 
         <!-- Cofrinho -->
         <div class="cofrinho-card">
           <div class="cofrinho-header">
-            <img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Fox/3D/fox_3d.png" style="width:28px;height:28px">
+            <img src="/fox-head.png.png" style="width:28px;height:28px;object-fit:contain">
             <h3>Cofrinho da Raposinha</h3>
           </div>
           <div class="cofrinho-pig">
-            <img src="https://stories.freepiklabs.com/storage/68771/Animals-floating-with-balloons-01.svg"
+            <img src="/piggy-bank.png"
                  style="width:110px;height:90px;object-fit:contain"
-                 alt="Raposinha balão">
+                 alt="Cofrinho">
           </div>
           <div class="cofrinho-row">
             <div class="cofrinho-label">Valor previsto</div>
@@ -806,7 +803,7 @@
             <div class="section-title" style="margin-bottom:0">Próximos passos</div>
           </div>
           <div style="text-align:center;margin-bottom:10px">
-            <img src="https://stories.freepiklabs.com/storage/62441/Fox-Family_Mesa-de-trabajo-1.svg"
+            <img src="/fox-clipboard.png"
                  style="width:110px;height:110px;object-fit:contain"
                  alt="Raposinha com lista">
           </div>
@@ -965,7 +962,7 @@
   </div><!-- /content -->
 
   <footer class="main-footer">
-    LuaraCheck <img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Fox/3D/fox_3d.png" style="width:16px;height:16px;vertical-align:middle"> Feito com amor por Luiz & Jessica para nossa Luara 💕
+    LuaraCheck <img src="/fox-head.png.png" style="width:16px;height:16px;vertical-align:middle;object-fit:contain"> Feito com amor por Luiz & Jessica para nossa Luara 💕
   </footer>
 </div><!-- /main -->
 
@@ -1116,10 +1113,11 @@ const FLUENT = {
   '🛏️': `${FX}/Bed/3D/bed_3d.png`,
   '🚗': `${FX}/Automobile/3D/automobile_3d.png`,
   '🍼': `${FX}/Baby%20bottle/3D/baby_bottle_3d.png`,
-  '🤱': `${FX}/Breast-feeding/3D/breast-feeding_3d.png`,
+  '🤰': `${FX}/Pregnant%20woman/3D/pregnant_woman_3d.png`,
+  '🤱': `${FX}/Pregnant%20woman/3D/pregnant_woman_3d.png`,
   '🩺': `${FX}/Stethoscope/3D/stethoscope_3d.png`,
   '📦': `${FX}/Package/3D/package_3d.png`,
-  '🦊': `${FX}/Fox/3D/fox_3d.png`,
+  '🦊': '/fox-head.png.png',
   '🏠': `${FX}/House/3D/house_3d.png`,
   '📂': `${FX}/Open%20file%20folder/3D/open_file_folder_3d.png`,
   '✅': `${FX}/Check%20mark%20button/3D/check_mark_button_3d.png`,
