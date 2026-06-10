@@ -679,17 +679,35 @@
   }
 
   @media (max-width: 640px) {
+    /* Fix body flex layout — remove sidebar from flow */
+    body { display: block !important; }
+    .sidebar { position: fixed !important; top: 0; left: 0; height: 100% !important; transform: translateX(-100%); z-index: 200; }
+    .sidebar.open { transform: translateX(0); }
+    .main { margin-left: 0 !important; width: 100% !important; display: block !important; }
+
+    /* Fixed mobile header */
+    .mobile-top-header { position: fixed !important; top: 0; left: 0; right: 0; width: 100%; z-index: 150; }
+
+    /* Show mobile elements */
     .mobile-top-header, .mobile-bottom-nav, .mobile-hero,
     .mobile-stats-row, .mobile-cats-header, .mobile-msg-card { display:flex !important; }
+
+    /* Hide desktop-only elements */
     .topbar { display:none !important; }
     .main-footer { display:none !important; }
     .cofrinho-card { display:none !important; }
     .bottom-grid { display:none !important; }
     .progress-fox { display:none !important; }
     #view-dashboard > .section-title { display:none !important; }
+
+    /* Content: pad top for fixed header, bottom for bottom nav */
+    .content { padding: 60px 12px 88px !important; }
+
+    /* Dashboard layout */
     .dashboard-grid { gap:0; }
     .progress-card { flex-direction:row; padding:12px; }
-    .content { padding:0 12px 88px !important; }
+
+    /* Categories grid */
     .categories-scroll { display:grid !important; grid-template-columns:repeat(3,1fr); gap:8px; overflow-x:unset; padding-bottom:0; }
     .cat-card { min-width:unset; }
   }
