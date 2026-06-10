@@ -633,9 +633,84 @@
     /* ── Footer ── */
     .main-footer { font-size: 11px; padding: 12px; }
   }
+
+  /* ═══════════════════════════════════════
+     MOBILE APP REDESIGN — hidden on desktop
+     ═══════════════════════════════════════ */
+  .mobile-top-header {
+    display:none; position:sticky; top:0; z-index:150;
+    background:#fff; border-bottom:1px solid var(--border);
+    padding:10px 16px; align-items:center; justify-content:space-between;
+  }
+  .mobile-bottom-nav {
+    display:none; position:fixed; bottom:0; left:0; right:0;
+    background:#fff; border-top:1.5px solid var(--border);
+    box-shadow:0 -4px 20px rgba(244,114,182,.1);
+    padding:8px 0; z-index:300; justify-content:space-around; align-items:center;
+  }
+  .mobile-hero {
+    display:none; background:var(--pink-light); border-radius:var(--radius);
+    padding:14px 16px; align-items:center; justify-content:space-between;
+    gap:8px; margin-bottom:12px;
+  }
+  .mobile-stats-row { display:none; gap:8px; margin-bottom:14px; }
+  .mobile-cats-header { display:none; align-items:center; justify-content:space-between; margin-bottom:10px; }
+  .mobile-msg-card {
+    display:none; background:var(--pink-light); border-radius:var(--radius);
+    padding:12px 14px; align-items:center; gap:10px; margin-top:14px;
+  }
+  .hero-text .hero-label { font-size:11px; color:var(--text-muted); font-weight:700; letter-spacing:.3px; }
+  .hero-text .hero-days { font-size:44px; font-weight:900; color:var(--pink-dark); line-height:1.05; }
+  .hero-text .hero-sub { font-size:12px; color:var(--text-sm); margin-top:4px; }
+  .mobile-stat-card { flex:1; background:#fff; border-radius:var(--radius-sm); padding:10px 6px; text-align:center; box-shadow:var(--shadow); }
+  .ms-label { font-size:10px; color:var(--text-muted); font-weight:600; margin-bottom:3px; }
+  .ms-val { font-size:13px; font-weight:800; }
+  .mbn-item { display:flex; flex-direction:column; align-items:center; gap:2px; padding:4px 6px; cursor:pointer; flex:1; }
+  .mbn-label { font-size:10px; font-weight:600; color:var(--text-muted); }
+  .mbn-item.active .mbn-label { color:var(--pink-dark); }
+  .mbn-item.active img { filter:drop-shadow(0 0 4px rgba(244,114,182,.6)); }
+  .mbn-plus {
+    width:50px; height:50px;
+    background:linear-gradient(135deg,var(--pink),var(--orange));
+    border-radius:50%; display:flex; align-items:center; justify-content:center;
+    font-size:26px; color:#fff; font-weight:300; line-height:1;
+    box-shadow:0 4px 16px rgba(244,114,182,.45);
+    cursor:pointer; margin-top:-16px; flex-shrink:0; border:none; outline:none;
+  }
+
+  @media (max-width: 640px) {
+    .mobile-top-header, .mobile-bottom-nav, .mobile-hero,
+    .mobile-stats-row, .mobile-cats-header, .mobile-msg-card { display:flex !important; }
+    .topbar { display:none !important; }
+    .main-footer { display:none !important; }
+    .cofrinho-card { display:none !important; }
+    .bottom-grid { display:none !important; }
+    .progress-fox { display:none !important; }
+    #view-dashboard > .section-title { display:none !important; }
+    .dashboard-grid { gap:0; }
+    .progress-card { flex-direction:row; padding:12px; }
+    .content { padding:0 12px 88px !important; }
+    .categories-scroll { display:grid !important; grid-template-columns:repeat(3,1fr); gap:8px; overflow-x:unset; padding-bottom:0; }
+    .cat-card { min-width:unset; }
+  }
 </style>
 </head>
 <body>
+
+<!-- ===== MOBILE TOP HEADER ===== -->
+<header class="mobile-top-header" id="mobile-top-header">
+  <div style="display:flex;align-items:center;gap:8px">
+    <img src="/logo.png" style="height:36px;width:auto;object-fit:contain">
+    <div>
+      <div style="font-size:15px;font-weight:800;color:var(--pink-dark);line-height:1.1">LuaraCheck</div>
+      <div id="mh-subtitle" style="font-size:10px;color:var(--text-muted);line-height:1">Enxoval da Luara</div>
+    </div>
+  </div>
+  <div style="position:relative;cursor:pointer" onclick="toggleSidebar()">
+    <span style="font-size:22px;line-height:1">🔔</span>
+    <span id="notif-badge-m" style="position:absolute;top:-4px;right:-4px;background:var(--orange);color:#fff;font-size:9px;font-weight:800;border-radius:999px;padding:1px 4px;min-width:14px;text-align:center">0</span>
+  </div>
+</header>
 
 <!-- ===== SIDEBAR ===== -->
 <aside class="sidebar">
@@ -724,6 +799,33 @@
 
     <!-- ===== DASHBOARD ===== -->
     <div class="view active" id="view-dashboard">
+
+      <!-- MOBILE HERO -->
+      <div class="mobile-hero">
+        <div class="hero-text">
+          <div class="hero-label">Faltam</div>
+          <div class="hero-days" id="m-hero-days">— dias</div>
+          <div class="hero-sub">para a chegada da Luara 💕</div>
+        </div>
+        <img src="/fox-family.png" style="width:110px;height:110px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 4px 12px rgba(244,114,182,.25))">
+      </div>
+
+      <!-- MOBILE STATS ROW -->
+      <div class="mobile-stats-row">
+        <div class="mobile-stat-card">
+          <div class="ms-label">Gastos</div>
+          <div class="ms-val" style="color:var(--pink-dark)" id="ms-gastos">R$ 0,00</div>
+        </div>
+        <div class="mobile-stat-card">
+          <div class="ms-label">Comprados</div>
+          <div class="ms-val" style="color:var(--green)" id="ms-ganhos">0 itens</div>
+        </div>
+        <div class="mobile-stat-card">
+          <div class="ms-label">Faltando</div>
+          <div class="ms-val" style="color:var(--orange)" id="ms-faltando">0 itens</div>
+        </div>
+      </div>
+
       <div class="dashboard-grid">
         <!-- Progress -->
         <div class="progress-card">
@@ -776,7 +878,20 @@
 
       <!-- Categories strip -->
       <div class="section-title">Categorias</div>
+      <div class="mobile-cats-header">
+        <span class="section-title" style="margin-bottom:0">Categorias</span>
+        <button class="link-btn" onclick="switchView('categorias')">Ver todas →</button>
+      </div>
       <div class="categories-scroll" id="d-cats-scroll"></div>
+
+      <!-- MOBILE MSG CARD -->
+      <div class="mobile-msg-card">
+        <img src="/fox-clipboard.png" style="width:52px;height:52px;object-fit:contain;flex-shrink:0">
+        <div>
+          <div style="font-size:14px;font-weight:700;color:var(--text)" id="m-msg-title">Você está indo muito bem! 🦊</div>
+          <div style="font-size:12px;color:var(--text-muted);margin-top:2px">Faltam <span id="m-faltam">0</span> itens para completar! 💕</div>
+        </div>
+      </div>
 
       <!-- Bottom grid -->
       <div class="bottom-grid">
@@ -1376,6 +1491,24 @@ function renderDashboard() {
   const budgetPct = planned > 0 ? Math.min(100, Math.round(spent / planned * 100)) : 0;
   document.getElementById('c-bar').style.width = budgetPct + '%';
 
+  // Mobile stats row
+  const notYetDone = total - done;
+  const mGastos = document.getElementById('ms-gastos');
+  const mGanhos = document.getElementById('ms-ganhos');
+  const mFaltando = document.getElementById('ms-faltando');
+  const mFaltam = document.getElementById('m-faltam');
+  if (mGastos) mGastos.textContent = fmtBRL(spent);
+  if (mGanhos) mGanhos.textContent = `${done} itens`;
+  if (mFaltando) mFaltando.textContent = `${notYetDone} itens`;
+  if (mFaltam) mFaltam.textContent = notYetDone;
+
+  // Mobile motivational message
+  const mMsgTitle = document.getElementById('m-msg-title');
+  if (mMsgTitle) {
+    const mobileMsgs = ['Vamos começar! 🦊', 'Ótimo início! 🌸', 'Arrasando! 💕', 'Metade! Incrível! ✨', 'Quase lá! 🎀', 'Prontos! 🦊🎉'];
+    mMsgTitle.textContent = mobileMsgs[Math.min(msgIdx, mobileMsgs.length - 1)];
+  }
+
   // Categories strip
   const catsScroll = document.getElementById('d-cats-scroll');
   catsScroll.innerHTML = window._state.categories.map((cat, idx) => {
@@ -1808,7 +1941,10 @@ window.saveConfig = async function() {
 
 function applyConfig() {
   const cfg = window._state.config;
-  document.getElementById('sb-subtitle').textContent = 'Enxoval da ' + (cfg.babyName || 'Luara');
+  const subtitleText = 'Enxoval da ' + (cfg.babyName || 'Luara');
+  document.getElementById('sb-subtitle').textContent = subtitleText;
+  const mhSub = document.getElementById('mh-subtitle');
+  if (mhSub) mhSub.textContent = subtitleText;
   document.getElementById('user-names').textContent = cfg.parentNames || 'Luiz & Jessica';
   const arrival = cfg.arrivalDate || '2026-08-09';
   const [y,m,d] = arrival.split('-');
@@ -1831,6 +1967,13 @@ function updateCountdown(arrivalDate) {
   if (diff > 0) el.textContent = `Faltam ${diff} dias 🩷`;
   else if (diff === 0) el.textContent = 'É hoje! 🎉🦊';
   else el.textContent = `Chegou há ${Math.abs(diff)} dias! 🎀`;
+  // Mobile hero
+  const mHero = document.getElementById('m-hero-days');
+  if (mHero) {
+    if (diff > 0) mHero.textContent = `${diff} dias`;
+    else if (diff === 0) mHero.textContent = 'Hoje! 🎉';
+    else mHero.textContent = 'Chegou! 🎀';
+  }
 }
 
 // ─── Clear bought items ───
@@ -1927,6 +2070,11 @@ window.switchView = function(view) {
   document.getElementById('view-' + view)?.classList.add('active');
   document.querySelector(`[data-view="${view}"]`)?.classList.add('active');
 
+  // Sync mobile bottom nav
+  document.querySelectorAll('.mbn-item').forEach(n => n.classList.remove('active'));
+  const mbnMap = { dashboard:'mbn-dashboard', itens:'mbn-itens', financeiro:'mbn-financeiro', timeline:'mbn-timeline' };
+  if (mbnMap[view]) document.getElementById(mbnMap[view])?.classList.add('active');
+
   const titles = {
     dashboard: ['Dashboard', 'Que bom ver vocês por aqui! 👋'],
     categorias: ['Categorias', 'Organize o enxoval por categorias'],
@@ -1989,5 +2137,27 @@ applyConfig();
 setInterval(() => updateCountdown(window._state.config.arrivalDate || '2026-08-09'), 60000);
 
 </script>
+
+<!-- ===== MOBILE BOTTOM NAV ===== -->
+<nav class="mobile-bottom-nav" id="mobile-bottom-nav">
+  <div class="mbn-item active" id="mbn-dashboard" onclick="switchView('dashboard')">
+    <img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/House/3D/house_3d.png" style="width:24px;height:24px;object-fit:contain">
+    <span class="mbn-label">Home</span>
+  </div>
+  <div class="mbn-item" id="mbn-itens" onclick="switchView('itens')">
+    <img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Check%20mark%20button/3D/check_mark_button_3d.png" style="width:24px;height:24px;object-fit:contain">
+    <span class="mbn-label">Itens</span>
+  </div>
+  <button class="mbn-plus" onclick="openItemModal()">+</button>
+  <div class="mbn-item" id="mbn-financeiro" onclick="switchView('financeiro')">
+    <img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/Money%20bag/3D/money_bag_3d.png" style="width:24px;height:24px;object-fit:contain">
+    <span class="mbn-label">Financeiro</span>
+  </div>
+  <div class="mbn-item" id="mbn-timeline" onclick="switchView('timeline')">
+    <img src="/fox-head.png.png" style="width:24px;height:24px;object-fit:contain;border-radius:50%">
+    <span class="mbn-label">Luara</span>
+  </div>
+</nav>
+
 </body>
 </html>
